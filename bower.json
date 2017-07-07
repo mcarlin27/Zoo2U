@@ -1,0 +1,17 @@
+{
+  "name": "animal-tracker",
+  "description": "#### A program that allows users to... 7/7/17",
+  "main": "gulpfile.js",
+  "authors": [
+    "Marilyn Carlin <marilyn.s.carlin@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
