@@ -5,10 +5,10 @@ import { Animal } from './animal.model';
   selector: 'animal-list',
   template: `
   <select (change)="onChange($event.target.value)">
-      <option value="allAnimals">All Animals</option>
+      <option value="allAnimals" selected="selected">All Animals</option>
       <option value="youngAnimals">Young Animals</option>
-      <option value="oldAnimals" selected="selected">Old Animals</option>
-    </select>
+      <option value="oldAnimals">Old Animals</option>
+  </select>
 
   <ul>
     <li *ngFor="let currentAnimal of childAnimalList | age:filterByAge">{{currentAnimal.name}}, {{currentAnimal.species}}
