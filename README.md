@@ -1,19 +1,19 @@
-# We Bought A Zoo
+# Zoo2U
 
-#### A program that allows users to... 7/7/17
+#### An Angular2 Animal Tracker 7/7/17
 
 #### By **Marilyn Carlin**
 
 ## Description
 
-A website created with Javascript that allows users to...
+A website created with Javascript that provides an animal tracking service for employees at a Zoo. Users can, through the Employee portal, Add, Delete, or Edit animals on a list of all animals at the zoo. Users through both the Employee and Patron portals can view animals sorted by age.
 
 ### Specs
 | Behavior | Example Input | Example Output |
 | :-------------     | :------------- | :------------- |
 | **Homepage with links to Visitor and Employee views** | Homepage | Visitor/Employee |
 | **VISITOR: can view all animals at zoo** | Visitor follows link to Visitor view | Initial view: All Animals |
-| **WISH LIST: VISITOR: can view animals by species** | Visitor follows link/button to view all animals of a specific species | View: All cheetas/tigers/etc.,... |
+| **WISH LIST: VISITOR: can view animals by species** | Visitor follows link/button to view all animals of a specific species | View: All cheetahs/tigers/etc.,... |
 | **WISH LIST: VISITOR: can suggest names for new baby animals** | Visitor follows link/button to list of unnamed baby animals at zoo | User can provide name suggestions for each baby animals (possibly with a profanity/crude word screen) |
 | **Employee can view all animals with edit functionality** | Employee follows link to Employee view | List of Animals with Edit functionality |
 | **Employee can add an animal** | Employee can add an animal in Employee view | Show/Hide form to add animal |
