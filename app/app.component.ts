@@ -5,7 +5,7 @@ import { Animal } from './animal.model';
   selector: 'app-root',
   template: `
     <div class="container">
-      <h1>Tap Room</h1>
+      <h1>Zoo2U</h1>
       <hr>
       <p *ngIf="patron" (click)="patronIsShown()">Patron</p>
       <p *ngIf="employee" (click)="employeeIsShown()">Employee</p>
@@ -14,6 +14,13 @@ import { Animal } from './animal.model';
       </div>
       <div *ngIf="employeeIsHidden">
         <p>Hello, employee</p>
+
+        <animal-list [childAnimalList]="masterAnimalList" (deleteClickSender)="delete($event)"></animal-list>
+
+        <new-animal [childAnimalInput]="addAnimalInput" (newAnimalSender)="addAnimal($event)" (addNewAnimalClickedSender)="showNewAnimalForm()" (doneAddingButtonClickedSender)="hideNewAnimalForm()"></new-animal>
+
+        <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="hideAnimalEditForm()"></edit-animal>
+
       </div>
     </div>
   `
@@ -25,10 +32,13 @@ export class AppComponent {
   employee = true;
   patronIsHidden = false;
   employeeIsHidden = false;
+  addAnimalInput = false;
+  selectedAnimal = null;
+  index = null;
 
   masterAnimalList: Animal[] = [
-    new Animal('Lion', 'Simba', 2, 'carnivore', 'African Plains Exhibit', 2, 'male', 'Timon, Pumbaa, singing, Hamlet', 'Scar, wildebeests, worries'),
-    new Animal('Lion', 'Simba', 2, 'carnivore', 'African Plains Exhibit', 2, 'male', 'Timon, Pumbaa, singing, Hamlet', 'Scar, wildebeests, worries')
+    new Animal('Simba', 'Lion', 2, 'carnivore', 'African Plains Exhibit', 2, 'male', 'Timon, Pumbaa, singing, Hamlet', 'Scar, wildebeests, worries'),
+    new Animal('Ariel', 'Mermaid', 16, 'omnivore', 'Under The Sea', 0, 'female', 'gadgets, gizmos, thingamabobs, Prince Eric, walking', 'Sea Witches, contract negotiation')
   ];
 
   patronIsShown() {
@@ -43,5 +53,31 @@ export class AppComponent {
     this.patronIsHidden = false;
     this.employee = false;
     this.patron = true;
+  }
+
+  editAnimal(clickedAnimal) {
+    this.selectedAnimal = clickedAnimal;
+  }
+
+  hideAnimalEditForm() {
+    this.selectedAnimal = null;
+  }
+
+  showNewAnimalForm() {
+    this.addAnimalInput = true;
+  }
+
+  addAnimal(newAnimalFromChild) {
+    this.masterAnimalList.push(newAnimalFromChild);
+  }
+
+  hideNewAnimalForm() {
+    this.addAnimalInput = false;
+  }
+
+  delete(clickedAnimal) {
+    var animal = clickedAnimal;
+    this.index = this.masterAnimalList.indexOf(animal);
+    this.masterAnimalList.splice(this.index, 1);
   }
 }

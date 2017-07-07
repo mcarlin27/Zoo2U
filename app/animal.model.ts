@@ -1,7 +1,7 @@
 export class Animal {
-  constructor(public species: string, public name: string, public age: number, public diet: string, public location: string, public caretakers: number, public sex: string, public likes: string, public dislikes: string) {
-    this.species = species,
+  constructor(public name: string, public species: string, public age: number, public diet: string, public location: string, public caretakers: number, public sex: string, public likes: string, public dislikes: string) {
     this.name = name,
+    this.species = species,
     this.age = age,
     this.diet = diet,
     this.location = location,
