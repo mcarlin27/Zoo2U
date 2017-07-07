@@ -11,6 +11,9 @@ import { Animal } from './animal.model';
       <p *ngIf="employee" (click)="employeeIsShown()">Employee</p>
       <div *ngIf="patronIsHidden">
         <p>Hello, patron</p>
+
+        <patron-animal-list [childPatronAnimalList]="masterAnimalList"></patron-animal-list>
+
       </div>
       <div *ngIf="employeeIsHidden">
         <p>Hello, employee</p>
@@ -19,7 +22,7 @@ import { Animal } from './animal.model';
 
         <new-animal [childAnimalInput]="addAnimalInput" (newAnimalSender)="addAnimal($event)" (addNewAnimalClickedSender)="showNewAnimalForm()" (doneAddingButtonClickedSender)="hideNewAnimalForm()"></new-animal>
 
-        <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="hideAnimalEditForm()"></edit-animal>
+        <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="hideAnimalEditForm()"></edit-animal> BUTTON DOENT GET CLICKED??
 
       </div>
     </div>
@@ -33,7 +36,7 @@ export class AppComponent {
   patronIsHidden = false;
   employeeIsHidden = false;
   addAnimalInput = false;
-  selectedAnimal = null;
+  selectedAnimal: Animal = null;
   index = null;
 
   masterAnimalList: Animal[] = [
@@ -55,8 +58,10 @@ export class AppComponent {
     this.patron = true;
   }
 
-  editAnimal(clickedAnimal) {
+  editAnimal(clickedAnimal: Animal) {
     this.selectedAnimal = clickedAnimal;
+    console.log(clickedAnimal);
+    console.log(this.selectedAnimal);
   }
 
   hideAnimalEditForm() {
