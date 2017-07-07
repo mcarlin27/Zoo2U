@@ -14,11 +14,11 @@ import { Animal } from './animal.model';
 
 export class AnimalListComponent {
   @Input() childAnimalList: Animal[];
-  @Output() clickSender = new EventEmitter();
+  @Output() editClickSender = new EventEmitter();
   @Output() deleteClickSender = new EventEmitter();
 
   editButtonHasBeenClicked(animalToEdit: Animal) {
-    this.clickSender.emit(animalToEdit);
+    this.editClickSender.emit(animalToEdit);
   }
 
   deleteButtonHasBeenClicked(animalToDelete: Animal) {

@@ -18,11 +18,11 @@ import { Animal } from './animal.model';
       <div *ngIf="employeeIsHidden">
         <p>Hello, employee</p>
 
-        <animal-list [childAnimalList]="masterAnimalList" (deleteClickSender)="delete($event)"></animal-list>
+        <animal-list [childAnimalList]="masterAnimalList" (editClickSender)="editAnimal($event)" (deleteClickSender)="delete($event)"></animal-list>
 
         <new-animal [childAnimalInput]="addAnimalInput" (newAnimalSender)="addAnimal($event)" (addNewAnimalClickedSender)="showNewAnimalForm()" (doneAddingButtonClickedSender)="hideNewAnimalForm()"></new-animal>
 
-        <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="hideAnimalEditForm()"></edit-animal> BUTTON DOENT GET CLICKED??
+        <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="hideAnimalEditForm()"></edit-animal>
 
       </div>
     </div>

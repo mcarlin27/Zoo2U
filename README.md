@@ -11,13 +11,13 @@ A website created with Javascript that allows users to...
 ### Specs
 | Behavior | Example Input | Example Output |
 | :-------------     | :------------- | :------------- |
-| **Homepage with links to Visitor and Employee views** | Homepage | Visitor/Employee |
-| **VISITOR: can view all animals at zoo** | Visitor follows link to Visitor view | Initial view: All Animals |
+| X**Homepage with links to Visitor and Employee views** | Homepage | Visitor/Employee |
+| X**VISITOR: can view all animals at zoo** | Visitor follows link to Visitor view | Initial view: All Animals |
 | **WISH LIST: VISITOR: can view animals by species** | Visitor follows link/button to view all animals of a specific species | View: All cheetas/tigers/etc.,... |
 | **WISH LIST: VISITOR: can suggest names for new baby animals** | Visitor follows link/button to list of unnamed baby animals at zoo | User can provide name suggestions for each baby animals (possibly with a profanity/crude word screen) |
 | **Employee can view all animals with edit functionality** | Employee follows link to Employee view | List of Animals with Edit functionality |
-| **Employee can add an animal** | Employee can add an animal in Employee view | Show/Hide form to add animal |
-| **Employee can delete animals from list** | Employee follows link to Employee view | List of Animals with Delete functionality |
+| X**Employee can add an animal** | Employee can add an animal in Employee view | Show/Hide form to add animal |
+| X**Employee can delete animals from list** | Employee follows link to Employee view | List of Animals with Delete functionality |
 | **Any user can view list of animals sorted by age** | Button to re-order master list of animals | List of Animals over/under specific age |
 
 ## Setup/Installation Requirements
